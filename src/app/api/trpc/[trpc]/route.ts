@@ -5,7 +5,7 @@ import { env } from "@/env";
 import { appRouter } from "@/server/api/root";
 import { createTRPCContext } from "@/server/api/trpc";
 
-export const maxDuration = 300;
+export const maxDuration = 60;
 
 /**
  * This wraps the `createTRPCContext` helper and provides the required context for the tRPC API when
@@ -26,10 +26,10 @@ const handler = (req: NextRequest) =>
     onError:
       env.NODE_ENV === "development"
         ? ({ path, error }) => {
-          console.error(
-            `❌ tRPC failed on ${path ?? "<no-path>"}: ${error.message}`
-          );
-        }
+            console.error(
+              `❌ tRPC failed on ${path ?? "<no-path>"}: ${error.message}`,
+            );
+          }
         : undefined,
   });
 
