@@ -35,22 +35,22 @@ export const processMeeting = async (audio_url: string) => {
   };
 };
 
-// processMeeting(FILE_URL);
-const fileUrl = "https://assembly.ai/sports_injuries.mp3";
+// // processMeeting(FILE_URL);
+// const fileUrl = "https://assembly.ai/sports_injuries.mp3";
 
-const transcript = await client.transcripts.transcribe({
-  // audio_url: fileUrl,
-  audio: readFileSync(fileUrl),
-  auto_chapters: true,
-  language_code: "en",
-});
+// const transcript = await client.transcripts.transcribe({
+//   // audio_url: fileUrl,
+//   audio: readFileSync(fileUrl),
+//   auto_chapters: true,
+//   language_code: "en",
+// });
 
-await writeFileSync("transcript.json", JSON.stringify(transcript, null, 2));
+// await writeFileSync("transcript.json", JSON.stringify(transcript, null, 2));
 
-// const summaries = transcript.chapters?.map(chapter => ({
-//     start: msToTime(chapter.start),
-//     end: msToTime(chapter.end),
-//     gist: chapter.gist,
-//     headline: chapter.headline,
-//     summary: chapter.summary
-// })) || [];
+// // const summaries = transcript.chapters?.map(chapter => ({
+// //     start: msToTime(chapter.start),
+// //     end: msToTime(chapter.end),
+// //     gist: chapter.gist,
+// //     headline: chapter.headline,
+// //     summary: chapter.summary
+// // })) || [];
